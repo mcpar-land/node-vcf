@@ -5,7 +5,7 @@ FN:Forrest Gump
 ORG:Bubba Gump Shrimp Co.
 TITLE:Shrimp Man
 PHOTO;MEDIATYPE=image/gif:http://www.example.com/dir_photos/my_photo.gif
-TEL;TYPE=work,voice;VALUE=uri:tel:+11115551212
+TEL;TYPE=work,voice,pref;VALUE=uri:tel:+11115551212
 TEL;TYPE=home,voice;VALUE=uri:tel:+14045551212
 item1.TEL;TYPE=home,voice;VALUE=uri:tel:+14045551213
 ADR;TYPE=work;LABEL="100 Waters Edge\nBaytown, LA 30314\nUnited States of A

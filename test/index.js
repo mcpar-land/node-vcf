@@ -58,6 +58,15 @@ suite( 'vCard', function() {
       assert.notStrictEqual( card.data.email, card.get( 'email' ) )
     })
 
+    test( 'get() should filter when provided with a type', function() {
+      assert.notStrictEqual( card.get('tel', 'work'), card.get('tel')[0] )
+      assert.notStrictEqual( card.get('tel', 'pref'), card.get('tel')[0] )
+      assert.notStrictEqual( card.get('tel', 'voice'), card.get('tel') )
+      assert.notStrictEqual( card.get('adr', 'home'), card.get('adr')[1] )
+      assert.strictEqual( card.get('tel', 'something'), undefined )
+      assert.notStrictEqual( card.get('email', null), card.get('email') )
+    })
+
     test( 'set() should set a property', function() {
       card.set( 'role', 'Communications' )
       assert.strictEqual( card.get( 'role' ).valueOf(), 'Communications' )

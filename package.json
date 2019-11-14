@@ -3,6 +3,7 @@
   "version": "2.0.6",
   "description": "Parse and construct vCards, jCards",
   "license": "MIT",
+  "types": "types.d.ts",
   "keywords": [
     "vcard",
     "hcard",

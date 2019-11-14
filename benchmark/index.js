@@ -31,6 +31,10 @@ var vCard = require( '..' )
       return instance.toJSON()
     })
 
+    bench( 'vCard#get()', function() {
+      return instance.get('tel', 'work')
+    })
+
   })
 
 })
