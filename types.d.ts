@@ -10,7 +10,7 @@ declare class vCard {
   data: {[field: string]: vCard.Property};
 
   /** Add a vCard property  */
-  add(key: PropertyType, value: string, params?: jCardParameters): vCard;
+  add(key: string, value: string, params?: {jCardParameters}): vCard;
 
   /**
    * Add a vCard property from an already
@@ -22,13 +22,17 @@ declare class vCard {
    * Get a vCard property
    * optionally, only get properties with the given `type`.
    */
-  get(key: PropertyType, type?: string ): vCard.Property | vCard.Property[];
+  get(key: string, type?: string ): vCard.Property | vCard.Property[];
 
   /** Parse a string or buffer into a vCard object*/
   parse(value: string|Buffer): vCard;
 
   /** Set a vCard property */
-  set(key: PropertyType, value: string, params?: jCardParameters): vCard;
+  set(
+    key: string,
+    value: string,
+    params?: {[type: string]: string | string[]}
+  ): vCard;
 
   /**
    * Set a vCard property from an already
@@ -94,7 +98,11 @@ declare class vCard {
 
 declare namespace vCard {
   class Property {
-      constructor(field: PropertyType, value: string, params?: jCardParameters);
+      constructor(
+        field: string,
+        value: string,
+        params?: {[type: string]: string | string[]}
+      );
 
       /** Returns a deep-copied clone of the property */
       clone(): Property;
