@@ -10,7 +10,7 @@ declare class vCard {
   data: {[field: string]: vCard.Property};
 
   /** Add a vCard property  */
-  add(key: string, value: string, params?: {jCardParameters}): vCard;
+  add(key: string, value: string, params?: {[key: string]: string | string[]}): vCard;
 
   /**
    * Add a vCard property from an already
